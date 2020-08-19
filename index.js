@@ -38,7 +38,7 @@ function handleEvent(event) {
       type:"text",
       text: "hello"
     };
-     return client.replyMessage(event.replyToken ,payload);
+     return client.replyMessage(event.userId ,payload);
   }
 }
 

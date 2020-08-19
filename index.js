@@ -39,7 +39,7 @@ function handleEvent(event) {
       text:"Hello from Heroku Server."
     };
 
-     return client.replyMessage(event.replyToken , payload);
+     return client.replyMessage(event.replyToken , event.replyToken.source.userId);
   }
 }
 

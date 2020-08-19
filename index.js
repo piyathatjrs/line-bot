@@ -33,13 +33,14 @@ function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
+  }else if(event.message.type === "text" || event.message.text === "Hello"){
+    const payload = {
+      type:"text",
+      text:"Hello from Heroku Server."
+    };
+
+     return client.replyMessage(event.replyToken , payload);
   }
-
-  // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
-
-  // use reply API
-  return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port

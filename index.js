@@ -27,19 +27,18 @@ app.post('/callback', line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 });
-
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
   }else if(event.message.type === "text" || event.message.text === "Hello"){
+    const userId = event.source.userId;
     const payload = {
       type:"text",
       text: "1111111"
     };
-
-     return client.replyMessage(event.replyToken ,payload );
+     return client.replyMessage(event.replyToken ,userId);
   }
 }
 

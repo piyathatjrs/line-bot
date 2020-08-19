@@ -36,10 +36,10 @@ function handleEvent(event) {
   }else if(event.message.type === "text" || event.message.text === "Hello"){
     const payload = {
       type:"text",
-      text:"Hello from Heroku Server."
+      text: "1111111"
     };
 
-     return client.replyMessage(event.replyToken , event.source.userId);
+     return client.replyMessage(event.replyToken , );
   }
 }
 

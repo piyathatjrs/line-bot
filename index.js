@@ -38,16 +38,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 
-    let sql = "SELECT * FROM sensor";
-    let query = db.query(sql, (err, results) => {
-      // สั่ง Query คำสั่ง sql
-      if (err) throw err; // ดัก error
-      console.log(results); // แสดงผล บน Console
-  
-      //res.json(results)   // สร้างผลลัพธ์เป็น JSON ส่งออกไปบน Browser
-      res.send({ message: "Ahoy!" });
-    });
-
 });
 // event handler
 function handleEvent(event) {
@@ -73,6 +63,8 @@ function handleEvent(event) {
     };
     return client.replyMessage(event.replyToken , str);
   }
+
+  return client.replyToken(event.replyToken , "OK");
 }
 
 

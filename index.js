@@ -45,7 +45,7 @@ function handleEvent(event) {
   }else if(event.message.text === 'charonesak_P@silpakorn.edu'){
     const str  = {
       type : "text",
-      text:"เริ่มต้นการใช้งาน : โดยที่แจ้งเตือนไปยัง ---> email : charonesak_P@silpakorn.edu"
+      text:"เริ่มต้นการใช้งาน : โดยที่แจ้งเตือนไปยังสมาชิกที่ใช้ ---> email : charonesak_P@silpakorn.edu ในการลงทะเบียน (AdsIOT)"
     };
     return client.replyMessage(event.replyToken , str);
   }

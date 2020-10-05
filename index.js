@@ -3,6 +3,18 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 
+const mysql = require("mysql"); // เรียกใช้ mysql
+const db = mysql.createConnection({
+  // config ค่าการเชื่อมต่อฐานข้อมูล
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "myproject",
+});
+db.connect(); // เชื่อมต่อฐานข้อมูล
+
+
+
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: "Trkk6NZiJgsrk7qFr1klaMA32EKjvqmigI48XGk6hKPw2AIVyxw6IU6tdj5rOBQRrU+H/dm0IZoQNoqtVsjfttxAlmTwoVggvUBGgyDRaFqT6ZVQTeN99kqaDJx9ycxKTGYUXwxuxq7k6hv/qVkJvQdB04t89/1O/w1cDnyilFU=",
@@ -15,7 +27,6 @@ const client = new line.Client(config);
 // create Express app
 // about Express itself: https://expressjs.com/
 const app = express();
-
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
@@ -26,6 +37,17 @@ app.post('/callback', line.middleware(config), (req, res) => {
       console.error(err);
       res.status(500).end();
     });
+
+    let sql = "SELECT * FROM sensor";
+    let query = db.query(sql, (err, results) => {
+      // สั่ง Query คำสั่ง sql
+      if (err) throw err; // ดัก error
+      console.log(results); // แสดงผล บน Console
+  
+      //res.json(results)   // สร้างผลลัพธ์เป็น JSON ส่งออกไปบน Browser
+      res.send({ message: "Ahoy!" });
+    });
+
 });
 // event handler
 function handleEvent(event) {
@@ -53,10 +75,15 @@ function handleEvent(event) {
   }
 }
 
+
+
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
+
+
+
 
 

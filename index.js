@@ -52,7 +52,12 @@ function handleEvent(event) {
   }
 
   if ( event.message.text !== 'text') {
-    return client.replyToken(event.replyToken , "Error");
+    const str_error  = {
+      type : "text",
+      text:"Error หาไม่เจอ"
+    };
+
+    return client.replyToken(event.replyToken , str_error);
   }
   
 }

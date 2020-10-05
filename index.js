@@ -51,7 +51,7 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken , str);
   }
 
-  if (event.type !== 'message' || event.message.type !== 'text') {
+  if (event.type == 'message' || event.message.type == 'text') {
     return client.replyToken(event.replyToken , "OK");
   }
   

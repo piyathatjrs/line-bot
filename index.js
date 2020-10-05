@@ -33,15 +33,23 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }else if(event.message.text === "Hello"){
-
-  
-
     const userId = event.source.userId;
     const payload = {
       type:"text",
       text: event.replyToken
     };
      return client.replyMessage(event.replyToken ,payload);
+  }
+
+
+  if(event.type != 'message' || event.message.type != 'text'){
+    return Promise.resolve(null);
+  }else if(event.message.text === 'charonesak_P@silpakorn.edu'){
+    const str  = {
+      type : "text",
+      text:"เริ่มต้นการใช้งาน : โดยที่แจ้งเตือนไปยัง ---> email : charonesak_P@silpakorn.edu"
+    };
+    return client.replyMessage(event.replyToken , str);
   }
 }
 

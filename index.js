@@ -33,6 +33,9 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }else if(event.message.type === "text" || event.message.text === "Hello"){
+
+  
+
     const userId = event.source.userId;
     const payload = {
       type:"text",

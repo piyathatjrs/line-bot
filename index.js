@@ -32,7 +32,7 @@ function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
-  }else if(event.message.type === "text" || event.message.text === "Hello"){
+  }else if(event.message.text === "Hello"){
 
   
 

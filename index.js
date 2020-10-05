@@ -3,6 +3,18 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 // create LINE SDK config from env variables
+
+const mysql = require("mysql"); // เรียกใช้ mysql
+const db = mysql.createConnection({
+  // config ค่าการเชื่อมต่อฐานข้อมูล
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "myproject",
+});
+db.connect(); // เชื่อมต่อฐานข้อมูล
+
+
 const config = {
   channelAccessToken: "Trkk6NZiJgsrk7qFr1klaMA32EKjvqmigI48XGk6hKPw2AIVyxw6IU6tdj5rOBQRrU+H/dm0IZoQNoqtVsjfttxAlmTwoVggvUBGgyDRaFqT6ZVQTeN99kqaDJx9ycxKTGYUXwxuxq7k6hv/qVkJvQdB04t89/1O/w1cDnyilFU=",
   channelSecret: "197977fb67765940cb7528882342c8d2",
@@ -28,6 +40,24 @@ app.post('/callback', line.middleware(config), (req, res) => {
 });
 // event handler
 function handleEvent(event) {
+
+  let sql = "SELECT * FROM sensor";
+  let query = db.query(sql, (err, results) => {
+    // สั่ง Query คำสั่ง sql
+    if (err) throw err; // ดัก error
+    console.log(results); // แสดงผล บน Console
+
+    //res.json(results)   // สร้างผลลัพธ์เป็น JSON ส่งออกไปบน Browser
+    res.send({ message: "Ahoy!" });
+  });
+
+
+
+
+
+
+
+
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
@@ -39,8 +69,6 @@ function handleEvent(event) {
     };
      return client.replyMessage(event.replyToken ,payload);
   }
-
-
   if(event.type != 'message' || event.message.type != 'text'){
     return Promise.resolve(null);
   }else if(event.message.text === 'charonesak_P@silpakorn.edu'){
@@ -50,16 +78,6 @@ function handleEvent(event) {
     };
     return client.replyMessage(event.replyToken , str);
   }
-
-  if ( event.message.text !== 'text') {
-    const str_error  = {
-      type : "text",
-      text:"Error หาไม่เจอ"
-    };
-
-    return client.replyToken(event.replyToken , str_error);
-  }
-  
 }
 
 

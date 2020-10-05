@@ -33,13 +33,10 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }else if(event.message.text === "Hello"){
-
-  
-
     const userId = event.source.userId;
     const payload = {
       type:"text",
-      text: event.replyToken
+      text: userId
     };
      return client.replyMessage(event.replyToken ,payload);
   }

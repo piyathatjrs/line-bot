@@ -39,7 +39,7 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type:"text",
-      text: "replyToken"
+      text: event.replyToken
     };
      return client.replyMessage(event.replyToken ,payload);
   }

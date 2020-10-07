@@ -4,15 +4,7 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 
 
-const mysql = require("mysql"); // เรียกใช้ mysql
-const db = mysql.createConnection({
-  // config ค่าการเชื่อมต่อฐานข้อมูล
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "myproject",
-});
-db.connect(); // เชื่อมต่อฐานข้อมูล
+
 
 // create LINE SDK config from env variables
 const config = {

@@ -2,6 +2,18 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+
+
+const mysql = require("mysql"); // เรียกใช้ mysql
+const db = mysql.createConnection({
+  // config ค่าการเชื่อมต่อฐานข้อมูล
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "myproject",
+});
+db.connect(); // เชื่อมต่อฐานข้อมูล
+
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: "Trkk6NZiJgsrk7qFr1klaMA32EKjvqmigI48XGk6hKPw2AIVyxw6IU6tdj5rOBQRrU+H/dm0IZoQNoqtVsjfttxAlmTwoVggvUBGgyDRaFqT6ZVQTeN99kqaDJx9ycxKTGYUXwxuxq7k6hv/qVkJvQdB04t89/1O/w1cDnyilFU=",
@@ -26,8 +38,12 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 
 });
+
 // event handler
 function handleEvent(event) {
+
+
+
   
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event

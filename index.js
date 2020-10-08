@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.end();
+
 
 // create LINE SDK config from env variables
 const config = {

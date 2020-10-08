@@ -53,7 +53,15 @@ function handleEvent(event) {
       type: "text",
       text: userId,
     };
+
+  
     return client.replyMessage(event.replyToken, payload);
+  }else {
+    const else_text = {
+      type: "text",
+      text: "กรุณาใส่คำสั่งให้ถูกต้อง 'หากต้องการใช้งานแจ้งเตือน พิมพ์ - รับรหัส ' ",
+    };
+    return client.replyMessage(event.replyToken, else_text);
   }
 }
 

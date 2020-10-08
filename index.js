@@ -1,6 +1,3 @@
-
-
-
 "use strict";
 
 const line = require("@line/bot-sdk");
@@ -30,19 +27,21 @@ app.post("/callback", line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
-
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
-  } else if (event.message.text === "Hello") {
+  } else if (event.message.text === "รูปภาพ") {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: event.replyToken,
+      text: "Hello, I am Cony!!",
+      sender: {
+        name: "Cony",
+        iconUrl: "https://line.me/conyprof",
+      },
     };
     return client.replyMessage(event.replyToken, payload);
   }
-
 
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
@@ -54,12 +53,12 @@ function handleEvent(event) {
       text: userId,
     };
 
-  
     return client.replyMessage(event.replyToken, payload);
-  }else {
+  } else {
     const else_text = {
       type: "text",
-      text: "กรุณาใส่คำสั่งให้ถูกต้อง 'หากต้องการใช้งานแจ้งเตือน พิมพ์ - รับรหัส ' ",
+      text:
+        "กรุณาใส่คำสั่งให้ถูกต้อง 'หากต้องการใช้งานแจ้งเตือน พิมพ์ - รับรหัส ' ",
     };
     return client.replyMessage(event.replyToken, else_text);
   }

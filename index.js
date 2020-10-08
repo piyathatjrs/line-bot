@@ -33,9 +33,9 @@ function handleEvent(event) {
   } else if (event.message.text === "รูปภาพ") {
     const userId = event.source.userId;
     const payload = {
-      type: "sticker",
-      packageId: "1",
-      stickerId: "1",
+      type: "image",
+      originalContentUrl: "https://example.com/original.jpg",
+      previewImageUrl: "https://example.com/preview.jpg",
     };
     return client.replyMessage(event.replyToken, payload);
   }

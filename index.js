@@ -34,8 +34,8 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "image",
-      originalContentUrl: "https://example.com/original.jpg",
-      previewImageUrl: "https://example.com/preview.jpg",
+      originalContentUrl: "soil_pic.png",
+      previewImageUrl: "soil_pic.png",
     };
     return client.replyMessage(event.replyToken, payload);
   }

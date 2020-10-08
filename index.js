@@ -3,15 +3,7 @@
 const line = require("@line/bot-sdk");
 const express = require("express");
 
-var mysql = require("mysql");
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "myproject",
-});
 
-connection.connect();
 
 
 
@@ -41,6 +33,18 @@ app.post("/callback", line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
+
+  var mysql = require("mysql");
+var connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "myproject",
+});
+
+connection.connect();
+
+
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);

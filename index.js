@@ -3,9 +3,6 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 
-
-
-
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: "Trkk6NZiJgsrk7qFr1klaMA32EKjvqmigI48XGk6hKPw2AIVyxw6IU6tdj5rOBQRrU+H/dm0IZoQNoqtVsjfttxAlmTwoVggvUBGgyDRaFqT6ZVQTeN99kqaDJx9ycxKTGYUXwxuxq7k6hv/qVkJvQdB04t89/1O/w1cDnyilFU=",
@@ -33,9 +30,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
-
-
-
   
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
@@ -48,6 +42,7 @@ function handleEvent(event) {
     };
      return client.replyMessage(event.replyToken ,payload);
   }
+
   if(event.type != 'message' || event.message.type != 'text'){
     return Promise.resolve(null);
   }else if(event.message.text === 'charonesak_P@silpakorn.edu'){
@@ -57,7 +52,23 @@ function handleEvent(event) {
     };
     return client.replyMessage(event.replyToken , str);
   }
+
+  if (event.type !== 'message' || event.message.type !== 'text') {
+    // ignore non-text-message event
+    return Promise.resolve(null);
+  }else if(event.message.text === "uid"){
+    const userId = event.source.userId;
+    const payload = {
+      type:"text",
+      text: userId
+    };
+     return client.replyMessage(event.replyToken ,payload);
+  }
+
+  
 }
+
+
 
 
 

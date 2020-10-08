@@ -33,12 +33,9 @@ function handleEvent(event) {
   } else if (event.message.text === "รูปภาพ") {
     const userId = event.source.userId;
     const payload = {
-      type: "text",
-      text: "Hello, I am Cony!!",
-      sender: {
-        name: "Cony",
-        iconUrl: "https://line.me/conyprof",
-      },
+      type: "sticker",
+      packageId: "1",
+      stickerId: "1",
     };
     return client.replyMessage(event.replyToken, payload);
   }

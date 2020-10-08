@@ -1,3 +1,10 @@
+<?php 
+
+
+?>
+
+
+
 "use strict";
 
 const line = require("@line/bot-sdk");
@@ -28,8 +35,6 @@ app.post("/callback", line.middleware(config), (req, res) => {
 // event handler
 function handleEvent(event) {
 
-
-
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
@@ -42,21 +47,11 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, payload);
   }
 
-  if (event.type != "message" || event.message.type != "text") {
-    return Promise.resolve(null);
-  } else if (event.message.text === "charonesak_P@silpakorn.edu") {
-    const str = {
-      type: "text",
-      text:
-        "เริ่มต้นการใช้งาน : โดยที่แจ้งเตือนไปยังสมาชิกที่ใช้ ---> email : charonesak_P@silpakorn.edu ในการลงทะเบียน (AdsIOT)",
-    };
-    return client.replyMessage(event.replyToken, str);
-  }
 
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
-  } else if (event.message.text === "uid") {
+  } else if (event.message.text === "รับรหัส") {
     const userId = event.source.userId;
     const payload = {
       type: "text",

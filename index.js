@@ -48,35 +48,15 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "text",
-      text: "$ Hello Extension $$$$",
-      emojis: [
-        {
-          index: 0,
-          productId: "5ac1bfd5040ab15980c9b435",
-          emojiId: "001",
-        },
-        {
-          index: 18,
-          productId: "5ac21a13031a6752fb806d57",
-          emojiId: "005",
-        },
-        {
-          index: 19,
-          productId: "5ac21a13031a6752fb806d57",
-          emojiId: "024",
-        },
-        {
-          index: 20,
-          productId: "5ac21a13031a6752fb806d57",
-          emojiId: "053",
-        },
-        {
-          index: 21,
-          productId: "5ac21a13031a6752fb806d57",
-          emojiId: "062",
-        },
-      ],
+      type: "imagemap",
+      baseUrl:
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/fdcc6b91-da8c-4f73-8961-c76f0790bf30/",
+      altText: "This is an imagemap",
+      baseSize: {
+        width: 1040,
+        height: 1040,
+      },
+      actions: [],
     };
 
     return client.replyMessage(event.replyToken, payload);

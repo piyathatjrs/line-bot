@@ -50,7 +50,7 @@ function handleEvent(event) {
     const payload = {
       type: "imagemap",
       baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/7caf25d2-5323-4187-a244-77cb212bc9ff/",
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/3df81063-642e-410d-85b0-645c1f289d82/",
       altText: "This is an imagemap",
       baseSize: {
         width: 1040,
@@ -58,17 +58,15 @@ function handleEvent(event) {
       },
       actions: [
         {
-          type: "postback",
+          type: "message",
           area: {
-            x: 225,
-            y: 254,
-            width: 549,
-            height: 489,
+            x: 354,
+            y: 475,
+            width: 31,
+            height: 29,
           },
-          text: "www.google.com",
-          data: "www.googlr.com",
         },
-      ],
+      ]
     };
 
     return client.replyMessage(event.replyToken, payload);

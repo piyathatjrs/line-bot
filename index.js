@@ -27,6 +27,7 @@ app.post("/callback", line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
+  console.log(event)
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
@@ -54,7 +55,7 @@ function handleEvent(event) {
 
     return client.replyMessage(event.replyToken, payload);
   } else {
-    const dispay_name = event.displayName;
+    const dispay_name = event.source.userId;
     const else_text = {
       type: "text",
       text:  dispay_name+"sdasdasd",

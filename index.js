@@ -55,7 +55,7 @@ function handleEvent(event) {
 
     return client.replyMessage(event.replyToken, payload);
   } else {
-    const dispay_name = event.source.userId;
+    const dispay_name = event.source.name;
     const else_text = {
       type: "text",
       text:  dispay_name+"sdasdasd",

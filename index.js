@@ -50,7 +50,7 @@ function handleEvent(event) {
     const payload = {
       type: "imagemap",
       baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/edc91ab1-83ca-4038-8d37-0ca61ed4b71a/",
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/7cc7fcf3-3793-45d7-9db0-7dafa5415341/",
       altText: "This is an imagemap",
       baseSize: {
         width: 1040,
@@ -58,26 +58,44 @@ function handleEvent(event) {
       },
       actions: [
         {
-          type: "message",
           area: {
-            x: 71,
-            y: 123,
-            width: 924,
-            height: 859,
+            x: 89,
+            y: 227,
+            width: 942,
+            height: 776,
           },
         },
         {
+          type: "uri",
           area: {
-            x: 965,
-            y: 872,
-            width: 2,
-            height: 2,
+            x: 104,
+            y: 188,
+            width: 917,
+            height: 780,
           },
+          linkUri: "www.google.com",
+        },
+        {
+          type: "uri",
+          area: {
+            x: 98,
+            y: 92,
+            width: 930,
+            height: 726,
+          },
+          linkUri: "www.google.com",
+        },
+        {
+          type: "uri",
+          area: {
+            x: 137,
+            y: 67,
+            width: 786,
+            height: 609,
+          },
+          linkUri: "www.google.com",
         },
       ],
-
-      // type: "text",
-      // text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+" หรือนำรหัส '"+userId+"' ไปใส่ในเว็ปตรงเมนู เชื่อต่อLINE",
     };
 
     return client.replyMessage(event.replyToken, payload);

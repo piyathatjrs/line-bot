@@ -48,7 +48,7 @@ function handleEvent(event) {
     const payload = {
       
         type: "text",
-        label: "Line",
+        text: "Line",
         uri: "https://google.com/",
       // type: "text",
       // text: "กดลิงค์นี้ http://localhost/project/login_add_line.php?id_line="+userId+"",

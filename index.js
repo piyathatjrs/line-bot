@@ -47,11 +47,9 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: "Hello, I am Cony!!",
-      sender: {
-        name: "Cony",
-        iconUrl: "https://line.me/conyprof",
-      },
+      text: "นี่คือข้อความตอบกลับของ Text message",
+      uri: "www.google.com",
+      
     };
 
     return client.replyMessage(event.replyToken, payload);

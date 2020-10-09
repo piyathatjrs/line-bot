@@ -48,24 +48,23 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "imagemap",
-      baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/3df81063-642e-410d-85b0-645c1f289d82/",
-      altText: "This is an imagemap",
-      baseSize: {
-        width: 1040,
-        height: 1040,
+      "type": "imagemap",
+      "baseUrl": "https://ex10.tech/store/v1/public/content/upload/imagemap/1e17f986-57d7-44bc-a5d3-1daee054d1c9/",
+      "altText": "This is an imagemap",
+      "baseSize": {
+          "width": 1040,
+          "height": 1040
       },
-      actions: [
-        {
-          type: "message",
-          area: {
-            x: 354,
-            y: 475,
-            width: 31,
-            height: 29,
-          },
-        },
+      "actions": [
+          {
+              "type": "postback",
+              "area": {
+                  "x": 354,
+                  "y": 475,
+                  "width": 31,
+                  "height": 29
+              }
+          }
       ]
     };
 

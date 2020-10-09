@@ -47,7 +47,7 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: "http://localhost/project/welcome.php",
+      text: "<a href='www.google.com'> Go GO </a>",
     };
 
     return client.replyMessage(event.replyToken, payload);

@@ -47,8 +47,8 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: "นี่คือข้อความตอบกลับของ Text message",
-      originalContentUrl: "www.google.com",
+      text: "กดลิงค์นี้ http://localhost/project/login_add_line.php?id_line="+userId+"",
+     
       
     };
 

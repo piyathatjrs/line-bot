@@ -46,12 +46,9 @@ function handleEvent(event) {
   } else if (event.message.text === "รับรหัส") {
     const userId = event.source.userId;
     const payload = {
-      
-        type: "text",
-        text: "Line",
-        link: "https://google.com/",
-      // type: "text",
-      // text: "กดลิงค์นี้ http://localhost/project/login_add_line.php?id_line="+userId+"",
+    
+      type: "text",
+      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
     };
 
     return client.replyMessage(event.replyToken, payload);

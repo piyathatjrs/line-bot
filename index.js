@@ -1,6 +1,5 @@
 "use strict";
 
-
 const line = require("@line/bot-sdk");
 const express = require("express");
 // create LINE SDK config from env variables
@@ -28,7 +27,7 @@ app.post("/callback", line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
-  console.log(event)
+  console.log(event);
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
@@ -46,15 +45,39 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   } else if (event.message.text === "รับรหัส") {
-
-  
-
     const userId = event.source.userId;
-   
+
     const payload = {
-    
-      type: "text",
-      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+" หรือนำรหัส '"+userId+"' ไปใส่ในเว็ปตรงเมนู เชื่อต่อLINE",
+      type: "imagemap",
+      baseUrl:
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/edc91ab1-83ca-4038-8d37-0ca61ed4b71a/",
+      altText: "This is an imagemap",
+      baseSize: {
+        width: 1040,
+        height: 1040,
+      },
+      actions: [
+        {
+          type: "message",
+          area: {
+            x: 71,
+            y: 123,
+            width: 924,
+            height: 859,
+          },
+        },
+        {
+          area: {
+            x: 965,
+            y: 872,
+            width: 2,
+            height: 2,
+          },
+        },
+      ],
+
+      // type: "text",
+      // text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+" หรือนำรหัส '"+userId+"' ไปใส่ในเว็ปตรงเมนู เชื่อต่อLINE",
     };
 
     return client.replyMessage(event.replyToken, payload);
@@ -62,7 +85,7 @@ function handleEvent(event) {
     const dispay_name = event.source.type;
     const else_text = {
       type: "text",
-      text:  dispay_name+"sdasdasd",
+      text: dispay_name + "sdasdasd",
     };
     return client.replyMessage(event.replyToken, else_text);
   }

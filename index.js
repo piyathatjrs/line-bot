@@ -54,7 +54,7 @@ function handleEvent(event) {
     const payload = {
     
       type: "text",
-      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"หรือน้ำรหัส '"+UserId+"'ไปใส่ในเว็ป",
+      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"หรือน้ำรหัส '"+userId+"'ไปใส่ในเว็ป",
     };
 
     return client.replyMessage(event.replyToken, payload);

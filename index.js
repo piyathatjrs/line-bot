@@ -1,5 +1,6 @@
 "use strict";
 
+
 const line = require("@line/bot-sdk");
 const express = require("express");
 // create LINE SDK config from env variables
@@ -45,12 +46,15 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   } else if (event.message.text === "รับรหัส") {
+
+  
+
     const userId = event.source.userId;
    
     const payload = {
     
       type: "text",
-      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
+      text: "กดลิงค์นี้ http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"หรือน้ำรหัส '"+UserId+"'ไปใส่ในเว็ป",
     };
 
     return client.replyMessage(event.replyToken, payload);

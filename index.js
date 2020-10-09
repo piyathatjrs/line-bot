@@ -50,13 +50,24 @@ function handleEvent(event) {
     const payload = {
       type: "imagemap",
       baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/fdcc6b91-da8c-4f73-8961-c76f0790bf30/",
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/53a344dc-0f66-4941-b729-cbfd2c50fca4/",
       altText: "This is an imagemap",
       baseSize: {
         width: 1040,
         height: 1040,
       },
-      actions: [],
+      actions: [
+        {
+          type: "uri",
+          area: {
+            x: 225,
+            y: 254,
+            width: 549,
+            height: 489,
+          },
+          linkUri: "www.google.com",
+        },
+      ],
     };
 
     return client.replyMessage(event.replyToken, payload);

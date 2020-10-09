@@ -45,6 +45,7 @@ function handleEvent(event) {
     return Promise.resolve(null);
   } else if (event.message.text === "รับรหัส") {
     const userId = event.source.userId;
+   
     const payload = {
     
       type: "text",
@@ -53,10 +54,11 @@ function handleEvent(event) {
 
     return client.replyMessage(event.replyToken, payload);
   } else {
+    const dispay_name = event.source.dispay_name;
     const else_text = {
       type: "text",
       text:
-        "กรุณาใส่คำสั่งให้ถูกต้อง 'หากต้องการใช้งานแจ้งเตือน พิมพ์ - รับรหัส ' ",
+      dispay_name,
     };
     return client.replyMessage(event.replyToken, else_text);
   }

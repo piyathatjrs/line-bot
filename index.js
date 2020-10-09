@@ -48,52 +48,33 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "imagemap",
-      baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/7cc7fcf3-3793-45d7-9db0-7dafa5415341/",
-      altText: "This is an imagemap",
-      baseSize: {
-        width: 1040,
-        height: 1040,
-      },
-      actions: [
+      type: "text",
+      text: "$ Hello Extension $$$$",
+      emojis: [
         {
-          area: {
-            x: 89,
-            y: 227,
-            width: 942,
-            height: 776,
-          },
+          index: 0,
+          productId: "5ac1bfd5040ab15980c9b435",
+          emojiId: "001",
         },
         {
-          type: "uri",
-          area: {
-            x: 104,
-            y: 188,
-            width: 917,
-            height: 780,
-          },
-          linkUri: "www.google.com",
+          index: 18,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "005",
         },
         {
-          type: "uri",
-          area: {
-            x: 98,
-            y: 92,
-            width: 930,
-            height: 726,
-          },
-          linkUri: "www.google.com",
+          index: 19,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "024",
         },
         {
-          type: "uri",
-          area: {
-            x: 137,
-            y: 67,
-            width: 786,
-            height: 609,
-          },
-          linkUri: "www.google.com",
+          index: 20,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "053",
+        },
+        {
+          index: 21,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "062",
         },
       ],
     };

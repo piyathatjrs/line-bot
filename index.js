@@ -47,7 +47,7 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: userId,
+      text: "http://localhost/project/welcome.php",
     };
 
     return client.replyMessage(event.replyToken, payload);

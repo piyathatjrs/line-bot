@@ -49,7 +49,7 @@ function handleEvent(event) {
       
         type: "text",
         text: "Line",
-        uri: "https://google.com/",
+        link: "https://google.com/",
       // type: "text",
       // text: "กดลิงค์นี้ http://localhost/project/login_add_line.php?id_line="+userId+"",
     };

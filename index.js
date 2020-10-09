@@ -46,11 +46,10 @@ function handleEvent(event) {
   } else if (event.message.text === "รับรหัส") {
     const userId = event.source.userId;
     const payload = {
-      action: {
+      
         type: "uri",
         label: "Line",
         uri: "https://google.com/",
-      },
       // type: "text",
       // text: "กดลิงค์นี้ http://localhost/project/login_add_line.php?id_line="+userId+"",
     };

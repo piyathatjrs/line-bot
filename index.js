@@ -47,7 +47,7 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       
-        type: "uri",
+        type: "text",
         label: "Line",
         uri: "https://google.com/",
       // type: "text",

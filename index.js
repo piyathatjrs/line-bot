@@ -47,7 +47,11 @@ function handleEvent(event) {
     const userId = event.source.userId;
     const payload = {
       type: "text",
-      text: "<a href='www.google.com'> Go GO </a>",
+      text: "Hello, I am Cony!!",
+      sender: {
+        name: "Cony",
+        iconUrl: "https://line.me/conyprof",
+      },
     };
 
     return client.replyMessage(event.replyToken, payload);

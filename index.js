@@ -48,7 +48,7 @@ function handleEvent(event) {
     const payload = {
       type: "text",
       text: "นี่คือข้อความตอบกลับของ Text message",
-      uri: "www.google.com",
+      originalContentUrl: "www.google.com",
       
     };
 

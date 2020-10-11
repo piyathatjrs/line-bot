@@ -50,7 +50,7 @@ function handleEvent(event) {
     const payload = {
 
         type :"text",
-        test:userId,
+        text:userId,
 
     };
 

@@ -48,25 +48,56 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "imagemap",
-      baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/4370da38-be69-490d-a503-373c789c4078/",
-      altText: "This is an imagemap",
-      baseSize: {
-        width: 1040,
-        height: 1040,
-      },
-      actions: [
-        {
-          type: "postback",
-          area: {
-            x: 17,
-            y: 17,
-            width: 998,
-            height: 994,
-          },
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        direction: "ltr",
+        header: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "เชื่อมต่อLINEกับทางเว็ปไซต์",
+              align: "center",
+            },
+          ],
         },
-      ],
+        hero: {
+          type: "image",
+          url:
+            "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          size: "full",
+          aspectRatio: "1.51:1",
+          aspectMode: "fit",
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Body",
+              align: "center",
+            },
+          ],
+        },
+        footer: {
+          type: "box",
+          layout: "horizontal",
+          contents: [
+            {
+              type: "button",
+              action: {
+                type: "uri",
+                label: "Button",
+                uri: "https://linecorp.com",
+              },
+            },
+          ],
+        },
+      },
     };
 
     return client.replyMessage(event.replyToken, payload);

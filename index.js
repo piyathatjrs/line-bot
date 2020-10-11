@@ -48,10 +48,27 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-
-        type :"text",
-        text:userId,
-
+      type: "imagemap",
+      baseUrl:
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/b70335bc-f0be-4942-8f29-d1fb019be3f5/",
+      altText: "This is an imagemap",
+      baseSize: {
+        width: 1040,
+        height: 693,
+      },
+      actions: [
+        {
+          type: "postback",
+          area: {
+            x: 96,
+            y: 84,
+            width: 853,
+            height: 456,
+          },
+          text: "A",
+          data: "data",
+        },
+      ],
     };
 
     return client.replyMessage(event.replyToken, payload);

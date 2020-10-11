@@ -50,23 +50,48 @@ function handleEvent(event) {
     const payload = {
       type: "imagemap",
       baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/b70335bc-f0be-4942-8f29-d1fb019be3f5/",
+        "https://ex10.tech/store/v1/public/content/upload/imagemap/48f78e56-55f3-4525-b5ab-51ad63e75c20/",
       altText: "This is an imagemap",
       baseSize: {
         width: 1040,
-        height: 693,
+        height: 524,
       },
       actions: [
         {
-          type: "postback",
+          type: "message",
           area: {
-            x: 96,
-            y: 84,
-            width: 853,
-            height: 456,
+            x: 164,
+            y: 73,
+            width: 458,
+            height: 291,
           },
-          text: "A",
-          data: "data",
+        },
+        {
+          type: "message",
+          area: {
+            x: 141,
+            y: 59,
+            width: 539,
+            height: 333,
+          },
+        },
+        {
+          type: "message",
+          area: {
+            x: 108,
+            y: 48,
+            width: 813,
+            height: 410,
+          },
+        },
+        {
+          type: "message",
+          area: {
+            x: 58,
+            y: 21,
+            width: 913,
+            height: 462,
+          },
         },
       ],
     };

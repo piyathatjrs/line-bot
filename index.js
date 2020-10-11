@@ -48,50 +48,33 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "imagemap",
-      baseUrl:
-        "https://ex10.tech/store/v1/public/content/upload/imagemap/48f78e56-55f3-4525-b5ab-51ad63e75c20/",
-      altText: "This is an imagemap",
-      baseSize: {
-        width: 1040,
-        height: 524,
-      },
-      actions: [
+      type: "text",
+      text: "$ Hello Extension $$$$",
+      emojis: [
         {
-          type: "message",
-          area: {
-            x: 164,
-            y: 73,
-            width: 458,
-            height: 291,
-          },
+          index: 0,
+          productId: "5ac1bfd5040ab15980c9b435",
+          emojiId: "001",
         },
         {
-          type: "message",
-          area: {
-            x: 141,
-            y: 59,
-            width: 539,
-            height: 333,
-          },
+          index: 18,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "005",
         },
         {
-          type: "message",
-          area: {
-            x: 108,
-            y: 48,
-            width: 813,
-            height: 410,
-          },
+          index: 19,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "024",
         },
         {
-          type: "message",
-          area: {
-            x: 58,
-            y: 21,
-            width: 913,
-            height: 462,
-          },
+          index: 20,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "053",
+        },
+        {
+          index: 21,
+          productId: "5ac21a13031a6752fb806d57",
+          emojiId: "062",
         },
       ],
     };

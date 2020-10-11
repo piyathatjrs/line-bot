@@ -92,7 +92,7 @@ function handleEvent(event) {
               action: {
                 type: "uri",
                 label: "กดปุ่ม",
-                uri: "https://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
+                uri: "http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
               },
             },
           ],

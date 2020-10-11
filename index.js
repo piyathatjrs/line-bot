@@ -59,7 +59,7 @@ function handleEvent(event) {
           contents: [
             {
               type: "text",
-              text: "เชื่อมต่อLINEกับทางเว็ปไซต์",
+              text: "เชื่อมต่อLINEกับทางเซ้ปไซต์",
               align: "center",
             },
           ],
@@ -91,8 +91,8 @@ function handleEvent(event) {
               type: "button",
               action: {
                 type: "uri",
-                label: "Button",
-                uri: "https://linecorp.com",
+                label: "กดปุ่ม",
+                uri: "https://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
               },
             },
           ],

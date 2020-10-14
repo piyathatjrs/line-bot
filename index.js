@@ -48,58 +48,68 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "flex",
-      altText: "Flex Message",
-      contents: {
-        type: "bubble",
-        direction: "ltr",
-        header: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "text",
-              text: "เชื่อมต่อLINEกับทางเซ้ปไซต์",
-              align: "center",
-            },
-          ],
+      type: "bubble",
+      hero: {
+        type: "image",
+        url:
+          "https://www.img.in.th/images/e1008b27b0847f532a1f67255e5ac241.png",
+        size: "full",
+        aspectRatio: "20:13",
+        aspectMode: "cover",
+        action: {
+          type: "uri",
+          label: "Line",
+          uri: "https://linecorp.com/",
         },
-        hero: {
-          type: "image",
-          url:
-            "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-          size: "full",
-          aspectRatio: "1.51:1",
-          aspectMode: "fit",
-        },
-        body: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "text",
-              text: "Body",
-              align: "center",
-            },
-          ],
-        },
-        footer: {
-          type: "box",
-          layout: "horizontal",
-          contents: [
-            {
-              type: "button",
-              action: {
-                type: "uri",
-                label: "กดปุ่ม",
-                uri:
-                  "http://localhost/project/Login_v16/login_add_line.php?id_line=" +
-                  userId +
-                  "",
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        contents: [
+          {
+            type: "box",
+            layout: "baseline",
+            margin: "md",
+            contents: [
+              {
+                type: "text",
+                text: "กรุณาเชื่อมต่อบัญชี",
+                weight: "bold",
+                size: "lg",
+                color: "#000000FF",
+                align: "center",
+                gravity: "center",
+                margin: "xs",
+                wrap: true,
+                style: "normal",
+                contents: [],
               },
+            ],
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        flex: 0,
+        spacing: "sm",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "เชื่อมต่อบัญชี",
+              uri: "https://linecorp.com",
             },
-          ],
-        },
+            color: "#1CB430FF",
+            margin: "md",
+            style: "primary",
+          },
+          {
+            type: "spacer",
+            size: "sm",
+          },
+        ],
       },
     };
 

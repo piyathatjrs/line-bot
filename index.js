@@ -30,42 +30,29 @@ function handleEvent(event) {
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
     return Promise.resolve(null);
-  } else if (event.message.text === "รูปภาพ") {
+  } else if (event.message.text === "เชื่อมต่อ") {
     const userId = event.source.userId;
     const payload = {
-      "size": {
-    "width": 2500,
-    "height": 1686
-  },
-  "selected": true,
-  "name": "A",
-  "chatBarText": "Bulletin",
-  "areas": [
-    {
-      "bounds": {
-        "x": 0,
-        "y": 3,
-        "width": 1247,
-        "height": 829
+      type: "template",
+      altText: "this is a buttons template",
+      template: {
+        type: "buttons",
+        actions: [
+          {
+            type: "message",
+            label: "Action 1",
+            text: "Action 1",
+          },
+          {
+            type: "message",
+            label: "Action 2",
+            text: "Action 2",
+          },
+        ],
+        thumbnailImageUrl: "SPECIFY_YOUR_IMAGE_URL",
+        title: "Title",
+        text: "Text",
       },
-      "action": {
-        "type": "uri",
-        "uri": "https://www.google.com"
-      }
-    },
-    {
-      "bounds": {
-        "x": 1270,
-        "y": 16,
-        "width": 1222,
-        "height": 815
-      },
-      "action": {
-        "type": "message",
-        "text": "Action 2"
-      }
-    }
-  ]
     };
     return client.replyMessage(event.replyToken, payload);
   }
@@ -120,7 +107,10 @@ function handleEvent(event) {
               action: {
                 type: "uri",
                 label: "Button",
-                uri: "http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
+                uri:
+                  "http://localhost/project/Login_v16/login_add_line.php?id_line=" +
+                  userId +
+                  "",
               },
             },
           ],
@@ -131,71 +121,7 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, payload);
   } else {
     const dispay_name = event.source.type;
-    const else_text = {
-      type: "bubble",
-      hero: {
-        type: "image",
-        url:
-          "https://www.img.in.th/images/e1008b27b0847f532a1f67255e5ac241.png",
-        size: "full",
-        aspectRatio: "20:13",
-        aspectMode: "cover",
-        action: {
-          type: "uri",
-          label: "Line",
-          uri: "https://linecorp.com/",
-        },
-      },
-      body: {
-        type: "box",
-        layout: "vertical",
-        contents: [
-          {
-            type: "box",
-            layout: "baseline",
-            margin: "md",
-            contents: [
-              {
-                type: "text",
-                text: "กรุณาเชื่อมต่อบัญชี",
-                weight: "bold",
-                size: "lg",
-                color: "#000000FF",
-                align: "center",
-                gravity: "center",
-                margin: "xs",
-                wrap: true,
-                style: "normal",
-                contents: [],
-              },
-            ],
-          },
-        ],
-      },
-      footer: {
-        type: "box",
-        layout: "vertical",
-        flex: 0,
-        spacing: "sm",
-        contents: [
-          {
-            type: "button",
-            action: {
-              type: "uri",
-              label: "เชื่อมต่อบัญชี",
-              uri: "https://linecorp.com",
-            },
-            color: "#1CB430FF",
-            margin: "md",
-            style: "primary",
-          },
-          {
-            type: "spacer",
-            size: "sm",
-          },
-        ],
-      },
-    };
+    const else_text = {};
     return client.replyMessage(event.replyToken, else_text);
   }
 }

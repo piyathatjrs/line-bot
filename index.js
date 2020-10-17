@@ -24,7 +24,6 @@ app.post("/callback", line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 });
-
 // event handler
 function handleEvent(event) {
   console.log(event);

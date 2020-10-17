@@ -33,25 +33,55 @@ function handleEvent(event) {
   } else if (event.message.text === "เชื่อมต่อ") {
     const userId = event.source.userId;
     const payload = {
-      type: "template",
-      altText: "this is a buttons template",
-      template: {
-        type: "buttons",
-        actions: [
-          {
-            type: "message",
-            label: "Action 1",
-            text: "Action 1",
-          },
-          {
-            type: "message",
-            label: "Action 2",
-            text: "Action 2",
-          },
-        ],
-        thumbnailImageUrl: "SPECIFY_YOUR_IMAGE_URL",
-        title: "Title",
-        text: "Text",
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        direction: "ltr",
+        header: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Header",
+              align: "center",
+            },
+          ],
+        },
+        hero: {
+          type: "image",
+          url:
+            "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          size: "full",
+          aspectRatio: "1.51:1",
+          aspectMode: "fit",
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Body",
+              align: "center",
+            },
+          ],
+        },
+        footer: {
+          type: "box",
+          layout: "horizontal",
+          contents: [
+            {
+              type: "button",
+              action: {
+                type: "uri",
+                label: "Button",
+                uri: "https://linecorp.com",
+              },
+            },
+          ],
+        },
       },
     };
     return client.replyMessage(event.replyToken, payload);

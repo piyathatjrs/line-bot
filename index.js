@@ -48,68 +48,55 @@ function handleEvent(event) {
     const userId = event.source.userId;
 
     const payload = {
-      type: "bubble",
-      hero: {
-        type: "image",
-        url:
-          "https://www.img.in.th/images/e1008b27b0847f532a1f67255e5ac241.png",
-        size: "full",
-        aspectRatio: "20:13",
-        aspectMode: "cover",
-        action: {
-          type: "uri",
-          label: "Line",
-          uri: "https://linecorp.com/",
-        },
-      },
-      body: {
-        type: "box",
-        layout: "vertical",
-        contents: [
-          {
-            type: "box",
-            layout: "baseline",
-            margin: "md",
-            contents: [
-              {
-                type: "text",
-                text: "กรุณาเชื่อมต่อบัญชี",
-                weight: "bold",
-                size: "lg",
-                color: "#000000FF",
-                align: "center",
-                gravity: "center",
-                margin: "xs",
-                wrap: true,
-                style: "normal",
-                contents: [],
-              },
-            ],
-          },
-        ],
-      },
-      footer: {
-        type: "box",
-        layout: "vertical",
-        flex: 0,
-        spacing: "sm",
-        contents: [
-          {
-            type: "button",
-            action: {
-              type: "uri",
-              label: "เชื่อมต่อบัญชี",
-              uri: "https://linecorp.com",
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        direction: "ltr",
+        header: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Header",
+              align: "center",
             },
-            color: "#1CB430FF",
-            margin: "md",
-            style: "primary",
-          },
-          {
-            type: "spacer",
-            size: "sm",
-          },
-        ],
+          ],
+        },
+        hero: {
+          type: "image",
+          url:
+            "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+          size: "full",
+          aspectRatio: "1.51:1",
+          aspectMode: "fit",
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Body",
+              align: "center",
+            },
+          ],
+        },
+        footer: {
+          type: "box",
+          layout: "horizontal",
+          contents: [
+            {
+              type: "button",
+              action: {
+                type: "uri",
+                label: "Button",
+                uri: "https://linecorp.com",
+              },
+            },
+          ],
+        },
       },
     };
 

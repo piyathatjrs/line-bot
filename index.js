@@ -46,7 +46,6 @@ function handleEvent(event) {
     return Promise.resolve(null);
   } else if (event.message.text === "รับรหัส") {
     const userId = event.source.userId;
-
     const payload = {
       type: "flex",
       altText: "Flex Message",
@@ -92,7 +91,7 @@ function handleEvent(event) {
               action: {
                 type: "uri",
                 label: "Button",
-                uri: "https://linecorp.com",
+                uri: "http://localhost/project/Login_v16/login_add_line.php?id_line="+userId+"",
               },
             },
           ],

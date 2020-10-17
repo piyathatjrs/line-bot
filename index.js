@@ -33,9 +33,39 @@ function handleEvent(event) {
   } else if (event.message.text === "รูปภาพ") {
     const userId = event.source.userId;
     const payload = {
-      type: "image",
-      originalContentUrl: "soil_pic",
-      previewImageUrl: "soil_pic",
+      "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "A",
+  "chatBarText": "Bulletin",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 3,
+        "width": 1247,
+        "height": 829
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://www.google.com"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1270,
+        "y": 16,
+        "width": 1222,
+        "height": 815
+      },
+      "action": {
+        "type": "message",
+        "text": "Action 2"
+      }
+    }
+  ]
     };
     return client.replyMessage(event.replyToken, payload);
   }

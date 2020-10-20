@@ -64,7 +64,7 @@ function handleEvent(event) {
               "type": "button",
               "action": {
                 "type": "uri",
-                "label": "เชื่อมต่อ",
+                "label": "Verify Account",
                 "uri":  'http://localhost/project/Login_v16/login_add_line.php?id_line='+userId+''
               },
               "color": "#05B003",

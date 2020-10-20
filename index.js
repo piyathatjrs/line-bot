@@ -77,7 +77,9 @@ function handleEvent(event) {
               action: {
                 type: "uri",
                 label: "Button",
-                uri: "https://linecorp.com",
+                uri: "http://localhost/project/Login_v16/login_add_line.php?id_line=" +
+                userId +
+                "",
               },
             },
           ],

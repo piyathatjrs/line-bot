@@ -33,60 +33,51 @@ function handleEvent(event) {
   } else if (event.message.text === "เชื่อมต่อ") {
     const userId = event.source.userId;
     const payload = {
-      type: "bubble",
-      hero: {
-        type: "image",
-        url:
-          "https://www.img.in.th/images/348e70511f72684eeccbec9d4d9ab777.png",
-        size: "full",
-        aspectRatio: "20:13",
-        aspectMode: "cover",
-        action: {
-          type: "uri",
-          label: "Line",
-          uri: "https://linecorp.com/",
+      "type": "flex",
+      "altText": "Flex Message",
+      "contents": {
+        "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เชื่อมต่อบัญชี",
+              "align": "center"
+            }
+          ]
         },
-      },
-      body: {
-        type: "box",
-        layout: "vertical",
-        contents: [
-          {
-            type: "text",
-            text: "เข้าสู่ระบบเพื่อยืนยันบัญชี",
-            weight: "bold",
-            size: "xl",
-            contents: [],
-          },
-        ],
-      },
-      footer: {
-        type: "box",
-        layout: "vertical",
-        flex: 0,
-        spacing: "sm",
-        contents: [
-          {
-            type: "button",
-            action: {
-              type: "uri",
-              label: "Verify Account",
-              uri:
-                'http://localhost/project/Login_v16/login_add_line.php?id_line='+userId+''
-            },
-            color: "#1EBA00FF",
-            margin: "sm",
-            style: "primary",
-          },
-          {
-            type: "spacer",
-            size: "sm",
-          },
-        ],
-      },
-    };
+        "hero": {
+          "type": "image",
+          "url": "https://www.img.in.th/images/348e70511f72684eeccbec9d4d9ab777.png",
+          "size": "full",
+          "aspectRatio": "1.51:1",
+          "aspectMode": "fit"
+        },
+        "footer": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "เชื่อมต่อ",
+                "uri":  'http://localhost/project/Login_v16/login_add_line.php?id_line='+userId+''
+              },
+              "color": "#05B003",
+              "style": "primary"
+            }
+          ]
+        }
+      }
+    }
     return client.replyMessage(event.replyToken, payload);
   }
+
+ 
 
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event

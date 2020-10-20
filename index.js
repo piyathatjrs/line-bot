@@ -72,7 +72,7 @@ function handleEvent(event) {
               type: "uri",
               label: "Verify Account",
               uri:
-                'http://localhost/project/Login_v16/login_add_line.php?id_line=" +   userId +',
+                'http://localhost/project/Login_v16/login_add_line.php?id_line='+userId+''
             },
             color: "#1EBA00FF",
             margin: "sm",

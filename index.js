@@ -44,7 +44,7 @@ function handleEvent(event) {
           "contents": [
             {
               "type": "text",
-              "text": "เชื่อมต่อบัญชี",
+              "text": "เข้าสู่ระบบเพื่อยืนยันบัญชี",
               "align": "center"
             }
           ]

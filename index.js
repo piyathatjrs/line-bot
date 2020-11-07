@@ -5,8 +5,8 @@ const express = require("express");
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken:
-    "Trkk6NZiJgsrk7qFr1klaMA32EKjvqmigI48XGk6hKPw2AIVyxw6IU6tdj5rOBQRrU+H/dm0IZoQNoqtVsjfttxAlmTwoVggvUBGgyDRaFqT6ZVQTeN99kqaDJx9ycxKTGYUXwxuxq7k6hv/qVkJvQdB04t89/1O/w1cDnyilFU=",
-  channelSecret: "197977fb67765940cb7528882342c8d2",
+    " ใส่ค่า channelAccessToken ",
+  channelSecret: "ใส่ค่า channelSecret",
 };
 // create LINE SDK client
 const client = new line.Client(config);
@@ -76,8 +76,6 @@ function handleEvent(event) {
     }
     return client.replyMessage(event.replyToken, payload);
   }
-
- 
 
   if (event.type !== "message" || event.message.type !== "text") {
     // ignore non-text-message event
